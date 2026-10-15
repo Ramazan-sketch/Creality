@@ -1,1 +1,1 @@
-# Creality
+# Welcome to your Dyad app
