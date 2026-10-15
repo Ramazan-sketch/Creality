@@ -18,26 +18,26 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: "k1-max-ai-fast",
-      title: "Продажа сайта и домен: +77786016967",
-      subtitle: "www.creality.kz",
+      title: "Продажа сайта и домена : +77786016967",
+      subtitle: "",
       description: "600mm/s max speed, AI camera, and all-metal extruder for professional results.",
-      image: "/Carousel.jpg",
+      image: "/carousel.jfif",
       tag: "Flagship"
     },
     {
       id: "ender-3-v3-plus",
-      title: "Продажа сайта и домен: +77786016967",
-      subtitle: "www.creality.kz",
+      title: "Продажа сайта и домена : +77786016967",
+      subtitle: "",
       description: "Large build volume with 600mm/s speed and unparalleled stability.",
-       image: "/Carousel.jpg",
+      image: "/carousel.jfif",
       tag: "New Arrival"
     },
     {
       id: "halot-mage-pro",
-       title: "Продажа сайта и домен: +77786016967",
-      subtitle: "www.creality.kz",
+      title: "Продажа сайта и домена : +77786016967",
+      subtitle: "",
       description: "The new standard for resin printing with incredible detail and speed.",
-       image: "/Carousel.jpg",
+      image: "/carousel.jfif",
       tag: "Resin Series"
     }
   ];
@@ -51,7 +51,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-gray-900">
       <Carousel 
         plugins={[plugin.current]}
         className="w-full"
@@ -63,8 +63,8 @@ const HeroCarousel = () => {
             <CarouselItem key={index}>
               <div className="relative h-[85vh] w-full flex items-center">
                 <div className="absolute inset-0">
-                  <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-70" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+                  <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
                 </div>
                 
                 <div className="container mx-auto px-4 relative z-10">
