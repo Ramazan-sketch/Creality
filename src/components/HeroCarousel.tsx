@@ -21,7 +21,7 @@ const HeroCarousel = () => {
       title: "Продажа сайта и домена : +77786016967",
       subtitle: "",
       description: "600mm/s max speed, AI camera, and all-metal extruder for professional results.",
-      image: "/carousel.jpg",
+      image: "/Carousel.jpg",
       tag: "Flagship"
     },
     {
@@ -29,7 +29,7 @@ const HeroCarousel = () => {
       title: "Продажа сайта и домена : +77786016967",
       subtitle: "",
       description: "Large build volume with 600mm/s speed and unparalleled stability.",
-      image: "/carousel.jpg",
+      image: "/Carousel.jpg",
       tag: "New Arrival"
     },
     {
@@ -37,7 +37,7 @@ const HeroCarousel = () => {
       title: "Продажа сайта и домена : +77786016967",
       subtitle: "",
       description: "The new standard for resin printing with incredible detail and speed.",
-      image: "/carousel.jpg",
+      image: "/Carousel.jpg",
       tag: "Resin Series"
     }
   ];
