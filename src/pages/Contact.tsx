@@ -34,7 +34,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold">Email Us</div>
-                    <div className="text-gray-500">info@creality.com</div>
+                    <div className="text-gray-500">info@creality.kz</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -43,7 +43,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold">Call Us</div>
-                    <div className="text-gray-500">+86 755 3396 1320</div>
+                    <div className="text-gray-500">+77786016967</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -52,7 +52,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold">Visit Us</div>
-                    <div className="text-gray-500">Shenzhen, Guangdong, China</div>
+                    <div className="text-gray-500">Almaty, Kazakhstan</div>
                   </div>
                 </div>
               </div>
@@ -63,11 +63,11 @@ const Contact = () => {
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold">First Name</label>
-                    <Input placeholder="John" className="rounded-xl h-12" required />
+                    <Input placeholder="Adam" className="rounded-xl h-12" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold">Last Name</label>
-                    <Input placeholder="Doe" className="rounded-xl h-12" required />
+                    <Input placeholder="Adil" className="rounded-xl h-12" required />
                   </div>
                 </div>
                 <div className="space-y-2">
