@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { LayoutGrid, Scale } from 'lucide-react';
+import { Scale } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const categories = [
@@ -57,7 +57,7 @@ const ProductCard = ({ product, onClick }: { product: any, onClick: () => void }
     {product.isNew ? (
       <span className="text-[#00D07D] text-xs font-medium mt-1">New</span>
     ) : (
-      <div className="h-[21px]" /> // Spacer to keep alignment
+      <div className="h-[21px]" />
     )}
   </div>
 );
@@ -75,7 +75,6 @@ const PrinterMenu = () => {
   return (
     <div className="fixed left-0 right-0 top-[64px] w-full bg-white shadow-2xl border-t border-gray-100 animate-in fade-in slide-in-from-top-2 duration-300 z-50">
       <div className="max-w-[1440px] mx-auto px-6 py-8">
-        {/* Sub-navigation */}
         <div className="flex justify-center gap-8 mb-10">
           {categories.map((cat) => (
             <button
@@ -94,7 +93,6 @@ const PrinterMenu = () => {
           ))}
         </div>
 
-        {/* Product Row */}
         <div className="flex justify-center gap-6 mb-12 min-h-[280px] overflow-x-auto pb-4 scrollbar-hide">
           <div className="flex gap-6">
             {currentProducts.map((product, idx) => (
@@ -107,15 +105,7 @@ const PrinterMenu = () => {
           </div>
         </div>
 
-        {/* Footer Actions */}
         <div className="flex justify-center gap-4 border-t border-gray-50 pt-8">
-          <button 
-            onClick={() => navigate('/catalog')}
-            className="flex items-center gap-2 px-6 py-2.5 bg-[#F5F5F7] hover:bg-[#E8E8ED] rounded-full text-sm font-medium text-[#1D1D1F] transition-colors"
-          >
-            <LayoutGrid size={18} />
-            More Products
-          </button>
           <button className="flex items-center gap-2 px-6 py-2.5 bg-[#F5F5F7] hover:bg-[#E8E8ED] rounded-full text-sm font-medium text-[#1D1D1F] transition-colors">
             <Scale size={18} />
             Compare

@@ -8,11 +8,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { showSuccess } from "@/utils/toast";
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useTranslation } from '@/context/LanguageContext';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    showSuccess("Message sent! We'll get back to you soon.");
+    showSuccess(t("contact.success"));
   };
 
   return (
@@ -22,9 +25,9 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <h1 className="text-5xl font-bold mb-8">Get in Touch</h1>
+              <h1 className="text-5xl font-bold mb-8">{t("contact.title")}</h1>
               <p className="text-xl text-gray-500 mb-12">
-                Have questions about our products or need a custom solution? Fill out the form and our team will contact you within 24 hours.
+                {t("contact.description")}
               </p>
               
               <div className="space-y-8">
@@ -33,7 +36,7 @@ const Contact = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <div className="font-bold">Email Us</div>
+                    <div className="font-bold">{t("contact.email")}</div>
                     <div className="text-gray-500">info@creality.kz</div>
                   </div>
                 </div>
@@ -42,7 +45,7 @@ const Contact = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <div className="font-bold">Call Us</div>
+                    <div className="font-bold">{t("contact.phone")}</div>
                     <div className="text-gray-500">+77786016967</div>
                   </div>
                 </div>
@@ -51,8 +54,8 @@ const Contact = () => {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <div className="font-bold">Visit Us</div>
-                    <div className="text-gray-500">Almaty, Kazakhstan</div>
+                    <div className="font-bold">{t("contact.visit")}</div>
+                    <div className="text-gray-500">{t("contact.address")}</div>
                   </div>
                 </div>
               </div>
@@ -62,24 +65,24 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold">First Name</label>
-                    <Input placeholder="Adam" className="rounded-xl h-12" required />
+                    <label className="text-sm font-bold">{t("contact.firstName")}</label>
+                    <Input placeholder={t("contact.placeholders.firstName")} className="rounded-xl h-12" required />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold">Last Name</label>
-                    <Input placeholder="Adil" className="rounded-xl h-12" required />
+                    <label className="text-sm font-bold">{t("contact.lastName")}</label>
+                    <Input placeholder={t("contact.placeholders.lastName")} className="rounded-xl h-12" required />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold">Email Address</label>
-                  <Input type="email" placeholder="Adil@example.com" className="rounded-xl h-12" required />
+                  <label className="text-sm font-bold">{t("contact.emailLabel")}</label>
+                  <Input type="email" placeholder={t("contact.placeholders.email")} className="rounded-xl h-12" required />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold">Message</label>
-                  <Textarea placeholder="How can we help you?" className="rounded-xl min-h-[150px]" required />
+                  <label className="text-sm font-bold">{t("contact.message")}</label>
+                  <Textarea placeholder={t("contact.placeholders.message")} className="rounded-xl min-h-[150px]" required />
                 </div>
                 <Button type="submit" className="w-full h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-lg font-bold">
-                  Send Message
+                  {t("contact.send")}
                 </Button>
               </form>
             </div>

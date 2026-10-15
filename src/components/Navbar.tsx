@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, ShoppingCart, User, Menu, ChevronDown, Globe } from 'lucide-react';
+import { Menu, Globe, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { showSuccess } from "@/utils/toast";
-import PrinterMenu from './PrinterMenu';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '@/context/LanguageContext';
+import PrinterMenu from './PrinterMenu';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,29 +21,18 @@ import {
 } from "@/components/ui/sheet";
 
 const Navbar = () => {
-  const { t, language, setLanguage } = useTranslation();
-  const [cartCount] = useState(0);
-  const [isPrintersOpen, setIsPrintersOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleAction = (action: string) => {
-    if (action === "Search") {
-      navigate('/catalog');
-    } else {
-      showSuccess(`${action} feature coming soon!`);
-    }
-  };
+  const { language, setLanguage, t } = useTranslation();
+  const [isPrinterMenuOpen, setIsPrinterMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t("nav.printers"), path: "/catalog", hasDropdown: true },
-    { name: t("nav.materials"), path: "/catalog", hasDropdown: false },
-    { name: t("nav.about"), path: "/about", hasDropdown: false },
-    { name: t("nav.support"), path: "/support", hasDropdown: false },
     { name: t("nav.contact"), path: "/contact", hasDropdown: false },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav 
+      className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100"
+      onMouseLeave={() => setIsPrinterMenuOpen(false)}
+    >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="text-2xl font-bold tracking-tighter text-primary hover:opacity-80 transition-opacity">
@@ -52,21 +40,28 @@ const Navbar = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-6 text-sm font-medium h-16">
+            {/* Кнопка принтеров теперь просто открывает меню без перехода в каталог */}
+            <div 
+              className="h-full flex items-center cursor-pointer"
+              onMouseEnter={() => setIsPrinterMenuOpen(true)}
+            >
+              <span className="hover:text-blue-600 transition-colors flex items-center gap-1 py-2">
+                {t("nav.printers")}
+                <ChevronDown size={14} className={`transition-transform ${isPrinterMenuOpen ? 'rotate-180' : ''}`} />
+              </span>
+            </div>
+
             {navLinks.map((link) => (
               <div 
                 key={link.name}
-                className="relative h-full flex items-center"
-                onMouseEnter={() => link.hasDropdown && setIsPrintersOpen(true)}
-                onMouseLeave={() => link.hasDropdown && setIsPrintersOpen(false)}
+                className="h-full flex items-center"
               >
                 <Link 
                   to={link.path}
                   className="hover:text-blue-600 transition-colors flex items-center gap-1 py-2"
                 >
-                  {link.name} {link.hasDropdown && <ChevronDown size={14} className={`transition-transform ${isPrintersOpen ? 'rotate-180' : ''}`} />}
+                  {link.name}
                 </Link>
-                
-                {link.hasDropdown && isPrintersOpen && <PrinterMenu />}
               </div>
             ))}
           </div>
@@ -87,34 +82,6 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="rounded-full"
-            onClick={() => handleAction("Search")}
-          >
-            <Search size={20} />
-          </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="rounded-full"
-            onClick={() => handleAction("User Profile")}
-          >
-            <User size={20} />
-          </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="rounded-full relative"
-            onClick={() => handleAction("Shopping Cart")}
-          >
-            <ShoppingCart size={20} />
-            <span className="absolute top-1 right-1 bg-blue-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
-              {cartCount}
-            </span>
-          </Button>
-
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden rounded-full">
@@ -126,11 +93,12 @@ const Navbar = () => {
                 <SheetTitle className="text-left text-2xl font-bold">Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-6 mt-8">
+                <span className="text-lg font-medium text-gray-400">{t("nav.printers")}</span>
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    className="text-lg font-medium text-left hover:text-blue-600 transition-colors border-b border-gray-100 pb-2"
+                  <Link 
+                    key={link.name} 
+                    to={link.path} 
+                    className="text-lg font-medium hover:text-blue-600 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -145,6 +113,8 @@ const Navbar = () => {
           </Sheet>
         </div>
       </div>
+
+      {isPrinterMenuOpen && <PrinterMenu />}
     </nav>
   );
 };
