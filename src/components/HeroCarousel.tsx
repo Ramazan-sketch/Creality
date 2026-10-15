@@ -19,23 +19,23 @@ const HeroCarousel = () => {
     {
       id: "k1-max-ai-fast",
       title: "Продажа сайта и домен: +77786016967",
-      subtitle: "Carbon Fiber Printing Made Easy",
+      subtitle: "www.creality.kz",
       description: "600mm/s max speed, AI camera, and all-metal extruder for professional results.",
       image: "/k1-max-new.png",
       tag: "Flagship"
     },
     {
       id: "ender-3-v3-plus",
-      title: "Ender-3 V3 Plus",
-      subtitle: "CoreXZ High-Speed 3D Printer",
+      title: "Продажа сайта и домен: +77786016967",
+      subtitle: "www.creality.kz",
       description: "Large build volume with 600mm/s speed and unparalleled stability.",
       image: "https://images.unsplash.com/photo-1705418270004-90036609f394?q=80&w=2070&auto=format&fit=crop",
       tag: "New Arrival"
     },
     {
       id: "halot-mage-pro",
-      title: "HALOT-MAGE PRO",
-      subtitle: "14K Ultra-High Precision",
+       title: "Продажа сайта и домен: +77786016967",
+      subtitle: "www.creality.kz",
       description: "The new standard for resin printing with incredible detail and speed.",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop",
       tag: "Resin Series"
