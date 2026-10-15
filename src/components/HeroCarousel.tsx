@@ -88,7 +88,7 @@ const HeroCarousel = () => {
                       <Button 
                         size="lg" 
                         variant="outline" 
-                        className="rounded-full px-10 h-14 text-lg border-2 border-white text-white hover:bg-white hover:text-black shadow-xl transform transition-transform hover:scale-105 active:scale-95"
+                        className="rounded-full px-10 h-14 text-lg border-2 border-white text-black hover:bg-white hover:text-black shadow-xl transform transition-transform hover:scale-105 active:scale-95"
                         onClick={() => handleBuyNow(slide.id)}
                       >
                         Learn More <ArrowRight className="ml-2" size={20} />
