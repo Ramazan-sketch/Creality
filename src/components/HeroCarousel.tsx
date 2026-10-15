@@ -18,7 +18,7 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: "k1-max-ai-fast",
-      title: "K1 Max: Champion of Speed",
+      title: "Продажа сайта и домен: +77786016967",
       subtitle: "Carbon Fiber Printing Made Easy",
       description: "600mm/s max speed, AI camera, and all-metal extruder for professional results.",
       image: "/k1-max-new.png",
