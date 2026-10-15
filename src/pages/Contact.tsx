@@ -72,7 +72,7 @@ const Contact = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold">Email Address</label>
-                  <Input type="email" placeholder="john@example.com" className="rounded-xl h-12" required />
+                  <Input type="email" placeholder="Adil@example.com" className="rounded-xl h-12" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold">Message</label>
